@@ -1,0 +1,25 @@
+version: "3"
+services:
+   web:
+     image: nginx:1.18.0
+     build: 
+        context: .
+        dockerfile: ./nginx/Dockerfile
+     ports: 
+        - 8080:80
+     volumes:
+        - ./logs/nginx:/var/log/nginx/
+     links:
+        - php_one
+        - php_two
+   php_one:
+     image: php:7.4-fpm
+     build:
+        context: .
+        dockerfile: ./php-fpm/Dockerfile
+     volumes:
+        - ./logs/php-fpm-1:/var/log/php-fpm/
+   php_two:
+     image: php:7.4-fpm
+     volumes:
+        - ./logs/php-fpm-2:/var/log/php-fpm/
