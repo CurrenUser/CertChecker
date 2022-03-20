@@ -29,7 +29,7 @@
 
 Через метод monitor можно добавить список серверов на оснований которого будет сформирована таблица с информацией о сертификатах для запрошенный url. Записи о сертификате который истекает через 30 дней будут подсвечиваются красным, остальные зеленым. request -> http://micro_service:8080/?monitor
 
-![alt text](screenshots/response monitor.png "пример ответа")
+![alt text](https://github.com/CurrenUser/CertChecker/blob/master/screenshots/response%20monitor.png "пример ответа")
 
 * Перед запусом измените server_name сайта на свой -> конфиг nginx\conf\site.conf
 * По умолчанию все ответы с кодо 201 кешируются на 30 минут, для отключения закоментируюте деректины fastcgi_cache* -> конфиг nginx\conf\site.conf
